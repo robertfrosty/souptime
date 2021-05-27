@@ -1,0 +1,104 @@
+body {
+	margin: 0;
+}
+.soup_bowl {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+.soup_bowl h2, .soup_bowl p {
+	text-align: center;
+	font-size: 1.8vw;
+	margin: 1vw 14vw;
+}
+
+.soup_bowl h2 {
+	font-size: 3.4vw;
+	padding-top: 8vw;
+}
+
+.table_cont {
+	height: 27.5vw;
+	overflow: scroll;
+	margin: 1vw 10vw;
+}
+
+table {
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.2vw;
+}
+tr {
+	background: rgba(0,0,0,0.4);
+	color: #FC7B03;
+}
+tr:nth-child(odd) {
+	background: rgba(60,60, 60,0.4);
+}
+th {
+	color: #FFF;
+	font-size: 2vw;
+	padding: 0.6vw;
+}
+td {
+	padding: 1vw;
+}
+td img {
+	height: 10vw;
+	width: 10vw;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+td:nth-child(2) {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+td:nth-child(3) a {
+	color: #FC7B03;
+}
+
+.soup_bowl .searchlong {
+	width: 100%;
+	text-align: center;
+}
+
+.soup_bowl input[type="text"] {
+	width: 80%;
+	height: auto;
+	padding: 1vw;
+	font-size: 1.6vw;
+}
+
+.soup_bowl input[type="text"]::placeholder {
+	font-size: 1.6vw;
+}
+
+@media only screen and (min-width: 10px) and (max-width: 779px) {
+	.soup_bowl h2 {
+		padding-top: 20vw;
+		font-size: 6vw;
+	}
+	.soup_bowl p {
+		font-size: 3vw;
+	}
+	.table_cont {
+		height: 55%;
+	}
+	.table_cont img {
+		height: 12vw;
+		width: 12vw;
+	}
+	.table_cont a {
+		font-size: 3vw;
+		display: block;
+		max-height: 12vw;
+		overflow: scroll;
+	}
+}

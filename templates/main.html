@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="It Is Soup Time">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css') }}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/homepage.css') }}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css') }}">
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+		<title>| Whoa! It's Soup Time | </title>
+		<link rel="shortcut icon" type="image/jpg" href="/static/logofinal1sm.png"/>
+	</head>
+	<body onload="textSpeech()">
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				document.getElementsByClassName("button_orng")[0].addEventListener("click", toText);
+			});
+		</script>
+		{% include "navbar.html" %}
+		<div class="soup_bowl">
+			<img src="{{url_for('static', filename='soupimgs/')}}{{ simg }}" style="position: absolute; left: -22; width: 120%; height: 120%; object-fit: cover; z-index: -1; filter: blur(15px)" alt="{{ sn }}">
+			<div class="share">
+				<img src="/static/shareico.png" id="0" onclick="this.nextElementSibling.classList.toggle('nonactive');checkPops(this.id);">
+				<div class="popup nonactive">
+					<h4>Share This Soup</h4>
+					<span id="selectable" onclick="selectText('selectable')">https://www.whoaitssouptime.ca/soups/{{ sid }}</span>
+					<!-- <span onclick="window.prompt('Copy to clipboard : Ctrl+C, Enter', this.innerHTML);">https://www.whoaitssouptime.ca/soups/{{ sid }}</span> -->
+				</div>
+			</div>
+			<div class="url">
+				<img src="/static/q.png" id="1" onclick="this.nextElementSibling.classList.toggle('nonactive');checkPops(this.id);">
+				<div class="popup nonactive">
+					<h4>Original URL</h4>
+					<span id="selectable2" onclick="selectText('selectable2')">{{ surl }}</span>
+				</div>
+			</div>
+			<div class="favadd">
+				<label>
+					<img src="/static/starw.png" onclick="onChange(this, toggleFav)">
+					<input type="checkbox" style="display: none;" checked>
+					<script>
+					var tmpList = JSON.parse(localStorage.getItem('favObject'));
+					if (tmpList) {
+						for (i=0; i < tmpList.length; i++) {
+							if ("{{sn}}" === tmpList[i]['name']) {
+								console.log("hit");
+								document.getElementsByClassName("fav")[0].children[0].children[0].src = "/static/star.png";
+							}
+						}
+					}
+					</script>
+				</label>
+			</div>
+			<div class="paddingcont">
+				<div class="textcont">
+				<div class="soup_img_cont">
+					<img src="{{url_for('static', filename='soupimgs/')}}{{ simg }}" alt="{{ sn }}">
+					<h1>{{ sn }}</h1>
+					<button class="button_orng">Change To Text Only</button>
+				</div>
+				<div class="ingredients">
+					<h1>Ingredients<img id="ingredVoice" src="{{url_for('static', filename='volume.png')}}"></h1>
+					<span>Scroll Down For More</span>
+					<ul>
+						{% for item in si %}
+						<li>{{ item }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="directions">
+					<h1>Directions<img id="dirVoice" src="{{url_for('static', filename='volume.png')}}"></h1>
+					<span>Scroll Down For More</span>
+					<ol>
+						{% for item in sd %}
+						<li>{{ item }}</li>
+						{% endfor %}
+					</ol>
+				</div>
+				</div>	
+			</div>
+		</div>	
+	</body>
+</html>

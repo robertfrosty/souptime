@@ -1,0 +1,51 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/main.css">
+	<link rel="stylesheet" href="/static/css/sr.css">
+	<link rel="stylesheet" href="/static/css/navbar.css">
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+	<title>Search Results | Whoa! It's Soup Time |</title>
+	</head>
+	<body>
+	{% include "navbar.html" %}
+	<div class="soup_bowl">
+		{% if soups %}
+			{% for soup in soups %}
+			{% if loop.index == 1 %}
+			<img src="/static/soupimgs/{{ soup[4] }}" style="position: absolute; left: -22; width: 120%; height: 120%; object-fit: cover; z-index: -1; filter: blur(15px)">
+			{% endif %}
+			{% endfor %}
+		{% else %}
+			<img src="/static/soupimgs/default.jpg" style="position: absolute; left: -22; width: 120%; height: 120%; object-fit: cover; z-index: -1; filter: blur(15px)">
+		{% endif %}
+		{% if soups %}
+			<h2>Search Results</h2>
+			<p>Check out the results table below to find the perfect soup that fits what you are looking for.</p>
+			<div class="table_cont">
+				<table>
+					<tr>
+						<th>Image</th>
+						<th>Name</th>
+						<th>URL</th>
+					</tr>
+					{% for soup in soups %}
+					<tr>
+						<td><img src="static/soupimgs/{{ soup[4] }}"></td>
+						<td><a href="https://whoaitssouptime.ca/soups/{{ soup[0] }}">{{ soup[1] }}</a></td>
+						<td><a href="{{ soup[5] }}" target="_blank">{{ soup[5] }}</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		{% else %}
+			<h2 style="color: #FFF;">Enter Your Search</h2>
+			<p style="color: #FFF;">Enter your search terms into the text box below, and we wish you luck in finding the perfect soup.</p>
+			<form class="searchlong" action="/searchsoup" method="POST">
+				<input type="text" name="searchinfo" placeholder="Search Soups">
+			</form>
+		{% endif %}
+	</div>
+	</body>
+</html>

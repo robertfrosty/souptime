@@ -1,0 +1,28 @@
+<div class="navbar" style="background: url({{ url_for('static', filename='navbar.jpg') }}); background-color: #333;">
+	<div class="favCont">
+		<label>
+			<img src="{{ url_for('static', filename='starb.png') }}" onclick="onChange(this, toggleFavOpen)">
+			<input type="checkbox" style="display: none;"checked>
+		</label>
+		<div class="favs">
+			<span>Favourite Soups</span>
+		</div>
+	</div>
+	<div class="title">
+		<a href="/"><img src="/static/logofinal1.png"></a>
+		<h1>It's Soup Time</h1>
+	</div>
+	<div class="mobile_search">
+		<span>Enter Your Search Below</span>
+		<form action="/searchsoup" method="POST">
+			<input type="text" name="searchinfo" placeholder="Search Soup">
+		</form>
+	</div>
+	<form class="search" action="/searchsoup" method="POST">
+		<input type="text" name="searchinfo" placeholder="Search Soups">
+	</form>
+	<label>
+		<img class="simg" src="{{ url_for('static', filename='search.png') }}" onclick="onChange(this, mobileSearch)">
+		<input type="checkbox" style="display: none;"checked>
+	</label>
+</div>

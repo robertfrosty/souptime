@@ -1,0 +1,9 @@
+#Ignore VirutalEnv/__pycache__ & Replace With requirements.txt
+soupenv/
+__pycache__/
+
+#Ignore Logging Files
+app.log
+
+#Ignore Soup Image Files
+static/soupimgs/
