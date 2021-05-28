@@ -7,3 +7,6 @@ app.log
 
 #Ignore Soup Image Files
 static/soupimgs/
+
+#Ignore dbinit.py
+dbinit.py

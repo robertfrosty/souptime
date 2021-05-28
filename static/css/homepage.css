@@ -245,7 +245,7 @@ li {
 	margin: 1vw 1vw 2vw 1vw;
 	color: #FC7B03;
 }
-.popup span {
+.popup a {
 	background: #AAA;
 	border-radius: 5px;
 	padding: 1vw;
@@ -256,6 +256,8 @@ li {
 	text-overflow: ellipsis;
 	display: block;
 	width: calc(100% - 2vw);
+	text-decoration: none;
+	color: #000;
 }
 .popup {
 	padding: 1vw 1vw 2vw 1vw;

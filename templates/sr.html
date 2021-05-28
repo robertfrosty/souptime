@@ -42,9 +42,9 @@
 		{% else %}
 			<h2 style="color: #FFF;">Enter Your Search</h2>
 			<p style="color: #FFF;">Enter your search terms into the text box below, and we wish you luck in finding the perfect soup.</p>
-			<form class="searchlong" action="/searchsoup" method="POST">
-				<input type="text" name="searchinfo" placeholder="Search Soups">
-			</form>
+			<div class="searchlong">
+				<input type="text" name="searchinfo" placeholder="Search Soups" onkeyup="if (event.keyCode == 13) {window.location.href = 'https://whoaitssouptime.ca/searchsoup' + '?q=' + this.value}">
+			</div>
 		{% endif %}
 	</div>
 	</body>

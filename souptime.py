@@ -48,23 +48,22 @@ def soupshare(soupid):
 	cur.close()
 	return "ERROR 404"
 
-@souptime.route("/searchsoup", methods=["GET", "POST"])
+@souptime.route("/searchsoup", methods=["GET"])
 def searchsoup():
-	if request.method == 'POST':
-		tmpvar = request.form["searchinfo"]
+	soupq = request.args.get("q")
+	if request.method == 'GET':
+		if soupq:
+			cur = mysql.connection.cursor()
+			cur.execute("SELECT * FROM soups WHERE INSTR(SoupName, %s)", [soupq])
+			tmpval = cur.fetchall()
+			cur.close()
 
-		cur = mysql.connection.cursor()
-		cur.execute("SELECT * FROM soups WHERE INSTR(SoupName, %s)", [tmpvar]) > 0
-		tmpval = cur.fetchall()
-		cur.close()
+			if cur.rowcount > 0:
+				return render_template("sr.html", soups=tmpval)
 
-		if cur.rowcount > 0:
-			return render_template("sr.html", soups=tmpval)
-
-		return render_template("sre.html")
-		#return redirect(url_for('homepage'))
-	else:
-		return render_template("sr.html", soups=[])
+			return render_template("sre.html")
+		else:
+			return render_template("sr.html", soups=[])
 
 @souptime.route("/scrapecurious")
 def scrapecurious():

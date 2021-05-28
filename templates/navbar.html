@@ -14,13 +14,13 @@
 	</div>
 	<div class="mobile_search">
 		<span>Enter Your Search Below</span>
-		<form action="/searchsoup" method="POST">
+		<div style="padding: 0vw 10vw">
 			<input type="text" name="searchinfo" placeholder="Search Soup">
-		</form>
+		</div>
 	</div>
-	<form class="search" action="/searchsoup" method="POST">
-		<input type="text" name="searchinfo" placeholder="Search Soups">
-	</form>
+	<div class="search">
+		<input type="text" name="searchinfo" placeholder="Search Soups" onkeyup="if (event.keyCode == 13) {window.location.href = 'https://whoaitssouptime.ca/searchsoup' + '?q=' + this.value}">
+	</div>
 	<label>
 		<img class="simg" src="{{ url_for('static', filename='search.png') }}" onclick="onChange(this, mobileSearch)">
 		<input type="checkbox" style="display: none;"checked>

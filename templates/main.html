@@ -23,7 +23,7 @@
 				<img src="/static/shareico.png" id="0" onclick="this.nextElementSibling.classList.toggle('nonactive');checkPops(this.id);">
 				<div class="popup nonactive">
 					<h4>Share This Soup</h4>
-					<span id="selectable" onclick="selectText('selectable')">https://www.whoaitssouptime.ca/soups/{{ sid }}</span>
+					<a id="selectable" onclick="selectText('selectable')" href="https://www.whoaitssouptime.ca/soups/{{ sid }}" target="_blank" rel="noopener noreferrer">https://www.whoaitssouptime.ca/soups/{{ sid }}</a>
 					<!-- <span onclick="window.prompt('Copy to clipboard : Ctrl+C, Enter', this.innerHTML);">https://www.whoaitssouptime.ca/soups/{{ sid }}</span> -->
 				</div>
 			</div>
@@ -31,20 +31,21 @@
 				<img src="/static/q.png" id="1" onclick="this.nextElementSibling.classList.toggle('nonactive');checkPops(this.id);">
 				<div class="popup nonactive">
 					<h4>Original URL</h4>
-					<span id="selectable2" onclick="selectText('selectable2')">{{ surl }}</span>
+					<a id="selectable2" onclick="selectText('selectable2')" href="{{ surl }}" target="_blank" rel="noopener noreferrer">{{ surl }}</a>
 				</div>
 			</div>
 			<div class="favadd">
 				<label>
-					<img src="/static/starw.png" onclick="onChange(this, toggleFav)">
+					<img src="{{ url_for('static', filename='starw.png') }}" onclick="onChange(this, toggleFav)">
 					<input type="checkbox" style="display: none;" checked>
 					<script>
-					var tmpList = JSON.parse(localStorage.getItem('favObject'));
+					var tmpList = JSON.parse(window.localStorage.getItem('favObject'));
 					if (tmpList) {
+						console.log(document.getElementsByClassName("favadd")[0].children[0]);
 						for (i=0; i < tmpList.length; i++) {
 							if ("{{sn}}" === tmpList[i]['name']) {
-								console.log("hit");
-								document.getElementsByClassName("fav")[0].children[0].children[0].src = "/static/star.png";
+								document.getElementsByClassName("favadd")[0].children[0].children[0].src = "/static/star.png";
+								document.getElementsByClassName("favadd")[0].children[0].children[1].checked = false;
 							}
 						}
 					}
