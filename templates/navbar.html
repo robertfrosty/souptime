@@ -1,7 +1,7 @@
 <div class="navbar" style="background: url({{ url_for('static', filename='navbar.jpg') }}); background-color: #333;">
 	<div class="favCont">
 		<label>
-			<img src="{{ url_for('static', filename='starb.png') }}" onclick="onChange(this, toggleFavOpen)">
+			<img src="{{ url_for('static', filename='starb.png') }}" onclick="onChange(this, toggleFavOpen)" alt="Click To Open Favourites">
 			<input type="checkbox" style="display: none;"checked>
 		</label>
 		<div class="favs">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="title">
-		<a href="/"><img src="/static/logofinal1.png"></a>
+		<a href="/" style="font-size: 0vw;"><img src="/static/logofinal1.png">Homepage</a>
 		<h1>It's Soup Time</h1>
 	</div>
 	<div class="mobile_search">
@@ -22,7 +22,7 @@
 		<input type="text" name="searchinfo" placeholder="Search Soups" onkeyup="if (event.keyCode == 13) {window.location.href = 'https://whoaitssouptime.ca/searchsoup' + '?q=' + this.value}">
 	</div>
 	<label>
-		<img class="simg" src="{{ url_for('static', filename='search.png') }}" onclick="onChange(this, mobileSearch)">
+		<img class="simg" src="{{ url_for('static', filename='search.png') }}" onclick="onChange(this, mobileSearch)" alt="Click To Open Search Menu">
 		<input type="checkbox" style="display: none;"checked>
 	</label>
 </div>

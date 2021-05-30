@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="It Is Soup Time">
@@ -23,8 +24,7 @@
 				<img src="/static/shareico.png" id="0" onclick="this.nextElementSibling.classList.toggle('nonactive');checkPops(this.id);">
 				<div class="popup nonactive">
 					<h4>Share This Soup</h4>
-					<a id="selectable" onclick="selectText('selectable')" href="https://www.whoaitssouptime.ca/soups/{{ sid }}" target="_blank" rel="noopener noreferrer">https://www.whoaitssouptime.ca/soups/{{ sid }}</a>
-					<!-- <span onclick="window.prompt('Copy to clipboard : Ctrl+C, Enter', this.innerHTML);">https://www.whoaitssouptime.ca/soups/{{ sid }}</span> -->
+					<a id="selectable" onclick="selectText('selectable')" href="/soups/{{sid}}" target="_blank" rel="noopener noreferrer">https://www.whoaitssouptime.ca/soups/{{ sid }}</a>
 				</div>
 			</div>
 			<div class="url">
@@ -41,7 +41,6 @@
 					<script>
 					var tmpList = JSON.parse(window.localStorage.getItem('favObject'));
 					if (tmpList) {
-						console.log(document.getElementsByClassName("favadd")[0].children[0]);
 						for (i=0; i < tmpList.length; i++) {
 							if ("{{sn}}" === tmpList[i]['name']) {
 								document.getElementsByClassName("favadd")[0].children[0].children[0].src = "/static/star.png";

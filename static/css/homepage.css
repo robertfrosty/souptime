@@ -116,6 +116,7 @@ body {
 	left: 49%;
 	top: 80%;
 	transform: translate(-50%, -50%);
+	height: 2.4vw;
 }
 
 .ingredients h1, .directions h1 {
@@ -163,6 +164,7 @@ li {
 
 .textonly .paddingcont {
 	padding-top: 7vw;
+	height: 100%;
 }
 
 .textonly .soup_img_cont {
@@ -172,7 +174,7 @@ li {
 }
 
 .textonly .soup_img_cont button {
-	max-height: 2vw;
+	height: 2.4vw;
 }
 
 .textonly .soup_img_cont img {

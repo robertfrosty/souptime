@@ -144,6 +144,7 @@ function toggleFav(on) {
 		}
 		document.getElementsByClassName("favs")[0].lastChild.remove();
 	}
+	console.log(window.localStorage);
 }
 
 function onChange(checkbox, xfunc) {
