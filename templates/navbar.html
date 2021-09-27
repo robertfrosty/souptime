@@ -15,7 +15,7 @@
 	<div class="mobile_search">
 		<span>Enter Your Search Below</span>
 		<div style="padding: 0vw 10vw">
-			<input type="text" name="searchinfo" placeholder="Search Soup">
+			<input type="text" name="searchinfo" placeholder="Search Soup" onkeyup="if (event.keyCode == 13) {window.location.href = 'https://whoaitssouptime.ca/searchsoup' + '?q=' + this.value}">
 		</div>
 	</div>
 	<div class="search">
