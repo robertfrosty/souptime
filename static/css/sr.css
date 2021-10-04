@@ -18,7 +18,7 @@ body {
 }
 
 .table_cont {
-	height: 27.5vw;
+	height: 50%;
 	overflow: scroll;
 	margin: 1vw 10vw;
 }

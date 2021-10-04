@@ -8,7 +8,7 @@
 	<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
 	<title>Search Results | Whoa! It's Soup Time |</title>
 	</head>
-	<body>
+	<body onload="loadFavs()">
 	{% include "navbar.html" %}
 	<div class="soup_bowl">
 		{% if soups %}

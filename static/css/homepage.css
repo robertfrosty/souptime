@@ -173,6 +173,7 @@ li {
 
 .textonly .soup_img_cont {
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
 }

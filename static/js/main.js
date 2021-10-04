@@ -38,7 +38,7 @@ function toBub() {
 	btn.addEventListener("click", toText);
 }
 
-function textSpeech() {
+function loadFavs() {
 	if (window.localStorage.getItem('favObject')) {
 		var favList = JSON.parse(window.localStorage.getItem('favObject'));
 		for (i=0; i < favList.length; i ++) {
@@ -57,6 +57,11 @@ function textSpeech() {
 			document.getElementsByClassName("favs")[0].appendChild(ediv);
 		}
 	}
+}
+
+function textSpeech() {
+	console.log(window.localStorage);
+	loadFavs();
 	if ('speechSynthesis' in window) {
 		var synthesis = window.speechSynthesis;
 
