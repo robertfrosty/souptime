@@ -4,7 +4,7 @@
 
 Base Website Design For WhoaIt'sSoupTime, with any sensitive information removed. This website is written in HTML/CSS and entirely vanilla Javascript, and hosted using a nginx & uWSGI web server that serves python web applications, all built on linux (of course), and provided by DigitalOcean.
 
-Also in the backend there is a cronjob that is responsible for scheduling the scrapecurious.py file, which scrapes any new soup content from epicurious using BS4, and adds it to our ever-growing database of soups, although epicurious has recently changed their HTML structure, seemingly to stop web-scraping, so we have stopped our web-scrapers from running on their website.
+Also in the backend there is a cronjob that is responsible for scheduling the scrapecurious.py file, which scrapes any new soup content from epicurious using BS4, and adds it to the ever-growing database of soups, although epicurious has recently changed their HTML structure, seemingly to stop web-scraping, so I've stopped the web-scrapers from running on their website.
 
 ***Homepage Production Version***
 
