@@ -16,7 +16,9 @@ Text-Only Version
 
 ***Personal Thoughts***
 
-This was my first large-scale project where I was completely in charge of developing all aspects of the website, and in addition I had moderately strict time requirements to uphold, so I felt a lot of pressure going into this project. Looking back would have done many things differently, however, I'm proud of the unique system that I created to receive and format information directly from the client, which will save the client a ton of time in the future. I'm very happy with the asthetic of the website, and when I have more time I have plans to go back and add in the animations that I have created all over the website.
+This is a fun little project that I've been slowly working on for a couple of months. I started the project close to a year ago, wrote some pretty iffy code, and then came back to it after a few months and have been slowly fixing everything. My friends and I had made a few jokes about 'soup time', and I thought it would be a funny idea to create a website, just for some laughs. Despite the humourous start, I really wanted to try and create something different / original for this project. All in all, I like design of the small website, although in the future I definitely plan on going back and redoing the icons, as well as adding a horizontal navbar. 
+
+Additionally I'm currently building out animations in Adobe After Effects and using the bodymoving plugin (https://github.com/airbnb/lottie-web) to render the animations as an inline HTML format.
 
 ***Server Side Flow Of Information/Data***
 ![diagram showing flow of information from 'nginx' to 'uWSGI' to 'python web frameworks' and then to other services on linux server](./screenshots/diag.png)
