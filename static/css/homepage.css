@@ -100,22 +100,21 @@ body {
 	position: relative;
 	filter: opacity(0.5) blur(3px);
 }
-.soup_bowl .soup_img_cont h1 {
+.soup_bowl .soup_img_cont div {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	color: #fff;
-	font-size: 3.4vmin;
 	width: 90%;
 	text-align: center;
 }
 
+.soup_bowl .soup_img_cont div h1 {
+	color: #fff;
+	font-size: 3.4vmin;
+}
+
 .soup_bowl .soup_img_cont button {
-	position: absolute;
-	left: 49%;
-	top: 80%;
-	transform: translate(-50%, -50%);
 }
 
 .ingredients h1, .directions h1 {
@@ -302,4 +301,16 @@ li {
 	width: 80vh;
 	height: 82%;
 	position: relative;
+}
+
+@media screen and (max-aspect-ratio: 1/2) {
+	.soup_bowl .soup_img_cont {
+		height: 90vmin;
+		width: 90vmin;
+	}
+	.soup_bowl .ingredients, .soup_bowl .directions {
+		height: 50vmin;
+		width: 50vmin;
+		bottom: 5vh;
+	}
 }
