@@ -2,7 +2,9 @@
 
 ***https://whoaitssouptime.ca***
 
-Base Website Design For WhoaIt'sSoupTime, with any sensitive information removed. This website is written in HTML/CSS and mainly vanilla Javascript (specific libraries like leaflet.js and dragscroll.js are used), and hosted using a nginx & uWSGI web server that serves python web applications, all built on linux (of course), and provided by DigitalOcean.
+Base Website Design For WhoaIt'sSoupTime, with any sensitive information removed. This website is written in HTML/CSS and entirely vanilla Javascript, and hosted using a nginx & uWSGI web server that serves python web applications, all built on linux (of course), and provided by DigitalOcean.
+
+On the backend on the server there is a cronjob that is responsible for scheduling the scrapecurious.py file, which scrapes any new soup content from epicurious using BS4.
 
 ***Homepage Production Version***
 
